@@ -1,0 +1,29 @@
+appId: com.kobe.fila
+
+---
+
+## --- A ideia é que cada teste seja independente, facilitando a execução isolada ---
+- launchApp:
+    clearState: true
+
+
+- runFlow: "../auth/login.yml"
+
+
+## -- Valida se o login foi realizado com sucesso ---
+- assertVisible:
+    text: "Boas-vindas, Wiliam!"
+
+- scroll
+
+- tapOn: "Sair"
+
+## -- Validar modal de confirmação de logout ---
+- assertVisible: "Tem certeza que deseja sair da sua conta?"
+
+
+## -- Confirmar logout ---
+- tapOn: "Sair"
+
+## -- Validar se voltou para a tela de login/cadastro ---
+- assertVisible: "Para uma melhor experiência, entre ou cadastre-se"

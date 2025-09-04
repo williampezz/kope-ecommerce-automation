@@ -1,0 +1,65 @@
+appId: com.kobe.fila
+
+
+---
+## --- A ideia é que cada teste seja independente, facilitando a execução isolada ---
+- launchApp:
+    clearState: true
+
+## --- Roda os scripts com dados dinamicos de cpf, email e telefone --- 
+- runScript: "../utils/Datas.js"
+- runScript: "../pages/auth.js"
+
+## --- Fluxo de cadastro de usuario ---
+- tapOn: 
+    id: "account"
+- tapOn:
+    id: "Cadastrar conta"
+
+## -- Valida se esta na tela de cadastro ---
+- assertVisible:
+    text: "Cadastrar nova conta"
+    enabled: true
+
+- tapOn:
+    id: "E-mail"
+
+## - Inputa email dinamico gerado no script Datas.js ---
+- inputText: "${output.signup.email}"
+- assertVisible:
+    text: "${output.signup.email}"
+    enabled: true
+
+## - Inputa senha dinamica gerada no script Datas.js ---
+- tapOn:
+    id: "Senha"
+- inputText: "${output.signup.password}"
+
+- tapOn:
+    id: "Nome"
+- inputText: "William"
+
+- tapOn:
+    id: "Sobrenome"
+- inputText: "Teste"
+
+## -- Segue o mesmo padrao de input em Datas.js para os demais campos ---
+- tapOn:
+    id: "CPF"
+- inputText: "${output.signup.cpf}"
+
+- tapOn:
+    id: "Data de nascimento"
+- inputText: "01011990"
+
+- tapOn:
+    id: "Telefone"
+- inputText: "${output.login.telefone}"
+
+- tapOn: "Gênero"    
+- tapOn: "Masculino"
+
+# Chega ate a etapa final de cadastro, porém não prossegue para evitar cadastros em PRD
+- tapOn:
+    id: "checkbox"
+

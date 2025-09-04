@@ -2,7 +2,7 @@ appId: com.kobe.fila
 
 ---
 
-## --- A ideia é que cada teste seja independente, facilitando a execução isolada ---
+
 - launchApp:
     clearState: true
 
@@ -34,19 +34,19 @@ appId: com.kobe.fila
 
 - tapOn:
     id: "E-mail"
-- inputText: "${output.login.email}"
+- inputText: "${output.invalidLogin.email}"
 
 - assertVisible:
-    text: "${output.login.email}"
+    text: "${output.invalidLogin.email}"
     enabled: true
 
 - tapOn:
     id: "Senha"
-- inputText: "${output.login.password}"
+- inputText: "${output.invalidLogin.password}"
 
 - tapOn:
     id: "Entrar"
 
 ## -- Valida se o login foi realizado com sucesso ---
 - assertVisible:
-    text: "Boas-vindas, Wiliam!"
+    text: "Usuário ou senha inválidos."
