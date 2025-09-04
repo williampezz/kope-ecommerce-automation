@@ -13,7 +13,6 @@ A automação cobre a seguinte jornada principal do usuário, simulando um fluxo
 3. **Seleção de produto:** Após logado, o usuario seleciona um novo produto.
 3. **Adição ao Carrinho:** O produto selecionado é adicionado ao carrinho de compras.
 
-
 ## ✅ Casos de Teste
 
 A automação inclui os seguintes casos de teste planejados:
