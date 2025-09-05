@@ -3,6 +3,13 @@
 Este projeto contém uma suíte de testes de automação desenvolvida com Maestro para validar uma jornada de usuário crítica em um aplicativo de e-commerce. A suíte é focada em garantir a estabilidade do fluxo de **login**, **login Invalido**, **logout**, **Cadastro**, **seleção de produto**, **adição ao carrinho**, **carrinho vazio** e **Favoritos**.
 
 
+**Link da execução dos testes:** [Visualizar no Google Drive](https://drive.google.com/file/d/1pnN7EcwFMV-Ipnr-2N7mNh_bgr4dgHio/view?usp=sharing)
+
+
+**Link dos CTs detalhados:** [Visualizar no Google Docs](https://docs.google.com/document/d/1DZnZ8wB2lNYh9QIg7K-ycsZMPk4770WzHb0AwaBXCfY/edit?usp=sharing)
+
+
+
 
 ## 🗺️ Jornada de Teste Automatizada
 
@@ -31,8 +38,6 @@ A automação inclui os seguintes casos de teste planejados:
 | CT-06 | Carrinho vazio | Valida o carrinho sem itens adicionados. |
 | CT-07 | Favoritos | Adiciona produtos aos favoritos. |
 
-
-**Link da execução dos testes:** [Visualizar no Google Drive](https://drive.google.com/file/d/1pnN7EcwFMV-Ipnr-2N7mNh_bgr4dgHio/view?usp=sharing)
 
 
 ## ⚙️ Pré-requisitos e Instalação
