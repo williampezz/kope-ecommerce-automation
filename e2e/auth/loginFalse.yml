@@ -47,6 +47,9 @@ appId: com.kobe.fila
 - tapOn:
     id: "Entrar"
 
+- waitForAnimationToEnd:
+    timeout: 10000      
+
 ## -- Valida se o login foi realizado com sucesso ---
 - assertVisible:
     text: "Usuário ou senha inválidos."

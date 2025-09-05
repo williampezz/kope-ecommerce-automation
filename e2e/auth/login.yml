@@ -5,6 +5,7 @@ appId: com.kobe.fila
 ## --- A ideia é que cada teste seja independente, facilitando a execução isolada ---
 - launchApp:
     clearState: true
+     
 
 ## -- Assert de que esta na tela inicial do app ---
 - assertVisible:
@@ -46,6 +47,10 @@ appId: com.kobe.fila
 
 - tapOn:
     id: "Entrar"
+
+- waitForAnimationToEnd:
+    timeout: 10000   
+
 
 ## -- Valida se o login foi realizado com sucesso ---
 - assertVisible:

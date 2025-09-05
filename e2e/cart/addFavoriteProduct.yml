@@ -1,0 +1,32 @@
+appId: com.kobe.fila
+
+---
+
+- launchApp:
+    clearState: true
+
+
+- assertVisible:
+    id: "categories"
+    enabled: true
+
+
+- tapOn:
+    id: "categories"
+
+- assertVisible:
+    text: "Buscar produtos"
+
+- tapOn: "Buscar produtos"
+- inputText: "${output.cart.product2}"
+- pressKey: Enter
+
+- tapOn: '.* Tênis Fila Original Fitness Bold Feminino.*'
+
+- assertVisible:
+    id: "Favoritos"
+
+- tapOn:
+    id: "Favoritos"
+
+

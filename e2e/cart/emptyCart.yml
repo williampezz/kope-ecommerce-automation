@@ -1,0 +1,20 @@
+appId: com.kobe.fila
+
+---
+
+- launchApp:
+    clearState: true
+
+
+## --- Valida que esta na home ---
+- assertVisible: 
+    id: "Cart"
+
+- tapOn:
+    id: "Cart"    
+
+- assertVisible:
+    id: "Seu carrinho está vazio"
+
+- tapOn:
+    id: "Escolher produtos"   

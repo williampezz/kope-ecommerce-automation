@@ -1,0 +1,76 @@
+appId: com.kobe.fila
+
+---
+
+- launchApp:
+    clearState: true
+
+- runScript: "../pages/cart.js"
+## -- Assert de que esta na tela inicial do app ---
+- assertVisible:
+    id: "categories"
+    enabled: true
+
+- tapOn:
+    id: "categories"
+
+- assertVisible:
+    text: "Buscar produtos"
+
+- tapOn: "Buscar produtos"
+- inputText: "${output.cart.product1}"
+- pressKey: Enter
+
+- waitForAnimationToEnd:
+    timeout: 20000   
+## --- Eu tentaria explorar formas melhores de selecionar produtos, por exemplo incluindo um id pro card ---
+## --- A forma que utilizei é através de um regex, simulando um Contains do Cypress  ---
+## --- É uma abordagem fragil pois não está imunie a mudanças do nome do produto ---
+
+- tapOn: '.*Tênis Fila Racer Carbon 3 Masculino.*'
+
+- scrollUntilVisible:
+    element:
+      text: "40" # or any other selector
+
+- tapOn: "40"
+
+- tapOn:
+    id: "Comprar agora"
+
+
+## --- Esse timeout insano está sendo necessario pois o produto demora muito para ser adicionado ao carrinho ---
+- waitForAnimationToEnd:
+    timeout: 20000   
+
+- extendedWaitUntil:
+    visible: "Produto adicionado ao carrinho!"
+    timeout: 20000
+
+
+- tapOn:
+    id: "Adicionar e ver mais produtos"
+
+- tapOn:
+    id: "Carrinho"   
+
+## --- Verifica se o carrinho possui 1 item ---
+## --- Encontrei essa forma para garantir que a quantidade de itens aumenta conforme adiciona mais produtos ---
+## --- Para futuras melhorias, poderia ser validado o preço inicial e o preço final, garantindo que o valor total do carrinho está atualizado ---
+- assertVisible: 
+    text: "1"
+
+- tapOn:
+    id: "Aumentar quantidade em 1"
+
+- assertVisible: 
+    text: "2"        
+
+
+## --- Apenas uma validação extra ---
+- assertVisible:
+    id:  "Fechar pedido"
+
+- killApp    
+
+

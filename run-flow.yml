@@ -5,12 +5,15 @@ tags:
 ---
 - launchApp:
     clearState: true
-    
-- runFlow: "e2e/auth/loginFalse.yml"
+- startRecording: recording    
+- runFlow: "e2e/cart/add_cart_items.yml"  
 - runFlow: "e2e/auth/login.yml"
+- runFlow: "e2e/auth/loginFalse.yml"
+- runFlow: "e2e/cart/emptyCart.yml" 
 - runFlow: "e2e/auth/logout.yml"
 - runFlow: "e2e/auth/signup.yml"
-
+- runFlow: "e2e/cart/addFavoriteProduct.yml"
+- stopRecording
 
 
 
